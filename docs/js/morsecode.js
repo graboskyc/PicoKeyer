@@ -1,3 +1,4 @@
+// Original Author: https://github.com/Syncthetic/MorseCode
 /*
   // Create an Object to encode/decode morse code with
     m = Object.create(MorseCode);
