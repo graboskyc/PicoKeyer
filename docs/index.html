@@ -59,6 +59,11 @@
             <section id="canvassection">
                 <details>
                     <summary>Morse Code Reference</summary>
+                    <div style="margin-bottom: 1rem;">
+                        <label for="morseInput">Type text to convert to Morse code:</label>
+                        <input type="text" id="morseInput" placeholder="Enter text here..." oninput="convertToMorse()" style="margin-top: 0.5rem;">
+                        <div id="morseOutput" style="margin-top: 0.5rem; padding: 0.5rem; background-color: var(--pico-background-color); border: 1px solid var(--pico-muted-border-color); border-radius: var(--pico-border-radius); font-family: monospace; min-height: 2rem; word-wrap: break-word;"></div>
+                    </div>
                     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.5rem; font-family: monospace; font-size: 0.9rem;">
                         <div><strong>A</strong> .-</div>
                         <div><strong>B</strong> -...</div>
@@ -291,6 +296,34 @@
     <script src="js/midi.js"></script>
     <script>
         feather.replace();
+        
+        // Load saved morse input text from localStorage on page load
+        const morseInput = document.getElementById('morseInput');
+        const savedMorseInput = localStorage.getItem('morseInput');
+        if (savedMorseInput !== null) {
+            morseInput.value = savedMorseInput;
+            convertToMorse(); // Convert the loaded text
+        }
+        
+        function convertToMorse() {
+            const input = document.getElementById('morseInput').value;
+            const output = document.getElementById('morseOutput');
+            
+            // Save to localStorage
+            localStorage.setItem('morseInput', input);
+            
+            if (input.trim() === '') {
+                output.textContent = '';
+                return;
+            }
+            
+            try {
+                const morseCode = MorseCode.encode(input);
+                output.textContent = morseCode;
+            } catch (error) {
+                output.textContent = 'Error converting to Morse code';
+            }
+        }
     </script>
 </body>
 

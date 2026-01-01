@@ -4,12 +4,25 @@ let enableSound = false;
 
 const togglesound = document.getElementById('togglesound');
 
+// Load sound preference from localStorage
+const savedSoundState = localStorage.getItem('enableSound');
+if (savedSoundState !== null) {
+    enableSound = savedSoundState === 'true';
+    togglesound.checked = enableSound;
+} else {
+    // Default to checked if not set
+    enableSound = true;
+    togglesound.checked = true;
+}
+
 togglesound.addEventListener('change', function () {
     if (this.checked) {
         enableSound = true;
     } else {
         enableSound = false;
     }
+    // Save preference to localStorage
+    localStorage.setItem('enableSound', enableSound);
 });
 
 function handleNote(message) {

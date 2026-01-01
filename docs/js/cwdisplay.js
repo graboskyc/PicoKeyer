@@ -44,6 +44,7 @@ let lastSegmentEnd = null; // Track last segment end for gap detection
 const TIMING_THRESHOLD_MULTIPLIER = 1.5; // Used to distinguish dot from dash
 let avgDotDuration = null; // Average duration of a dot
 let dotDurations = []; // Store recent dot durations for averaging
+let autoClearTimer = null; // Timer for auto-clearing decoded text
 
 // Update dynamic settings based on canvas size
 function updateSettings() {
@@ -197,6 +198,16 @@ function updateDecodedTextDisplay() {
     if (displayElement) {
         displayElement.textContent = decodedText;
     }
+    
+    // Clear existing timer
+    if (autoClearTimer) {
+        clearTimeout(autoClearTimer);
+    }
+    
+    // Set timer to clear after 8 seconds of inactivity
+    autoClearTimer = setTimeout(() => {
+        clearDecodedText();
+    }, 5000);
 }
 
 // Function to get the decoded text
@@ -217,8 +228,23 @@ function resetDecoder() {
 function clearDecodedText() {
     decodedText = '';
     currentMorseChar = '';
-    updateDecodedTextDisplay();
+    updateDecodedTextDisplayImmediate();
+    
+    // Clear the auto-clear timer
+    if (autoClearTimer) {
+        clearTimeout(autoClearTimer);
+        autoClearTimer = null;
+    }
+    
     console.log('Decoded text cleared');
+}
+
+// Update display without resetting the timer
+function updateDecodedTextDisplayImmediate() {
+    const displayElement = document.getElementById('decodedTextContent');
+    if (displayElement) {
+        displayElement.textContent = decodedText;
+    }
 }
 
 // Start animation
