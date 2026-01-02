@@ -207,7 +207,7 @@ function updateDecodedTextDisplay() {
     // Set timer to clear after 8 seconds of inactivity
     autoClearTimer = setTimeout(() => {
         clearDecodedText();
-    }, 5000);
+    }, 4000);
 }
 
 // Function to get the decoded text

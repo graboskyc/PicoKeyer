@@ -56,81 +56,104 @@
     </header>
     <main id="main" class="container hidden">
         <article>
-            <section id="canvassection">
+            <section>
                 <details>
                     <summary>Morse Code Reference</summary>
-                    <div style="margin-bottom: 1rem;">
-                        <label for="morseInput">Type text to convert to Morse code:</label>
-                        <input type="text" id="morseInput" placeholder="Enter text here..." oninput="convertToMorse()" style="margin-top: 0.5rem;">
-                        <div id="morseOutput" style="margin-top: 0.5rem; padding: 0.5rem; background-color: var(--pico-background-color); border: 1px solid var(--pico-muted-border-color); border-radius: var(--pico-border-radius); font-family: monospace; min-height: 2rem; word-wrap: break-word;"></div>
-                    </div>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.5rem; font-family: monospace; font-size: 0.9rem;">
-                        <div><strong>A</strong> .-</div>
-                        <div><strong>B</strong> -...</div>
-                        <div><strong>C</strong> -.-.</div>
-                        <div><strong>D</strong> -..</div>
-                        <div><strong>E</strong> .</div>
-                        <div><strong>F</strong> ..-.</div>
-                        <div><strong>G</strong> --.</div>
-                        <div><strong>H</strong> ....</div>
-                        <div><strong>I</strong> ..</div>
-                        <div><strong>J</strong> .---</div>
-                        <div><strong>K</strong> -.-</div>
-                        <div><strong>L</strong> .-..</div>
-                        <div><strong>M</strong> --</div>
-                        <div><strong>N</strong> -.</div>
-                        <div><strong>O</strong> ---</div>
-                        <div><strong>P</strong> .--.</div>
-                        <div><strong>Q</strong> --.-</div>
-                        <div><strong>R</strong> .-.</div>
-                        <div><strong>S</strong> ...</div>
-                        <div><strong>T</strong> -</div>
-                        <div><strong>U</strong> ..-</div>
-                        <div><strong>V</strong> ...-</div>
-                        <div><strong>W</strong> .--</div>
-                        <div><strong>X</strong> -..-</div>
-                        <div><strong>Y</strong> -.--</div>
-                        <div><strong>Z</strong> --..</div>
-                        <div><strong>1</strong> .----</div>
-                        <div><strong>2</strong> ..---</div>
-                        <div><strong>3</strong> ...--</div>
-                        <div><strong>4</strong> ....-</div>
-                        <div><strong>5</strong> .....</div>
-                        <div><strong>6</strong> -....</div>
-                        <div><strong>7</strong> --...</div>
-                        <div><strong>8</strong> ---..</div>
-                        <div><strong>9</strong> ----.</div>
-                        <div><strong>0</strong> -----</div>
-                        <div><strong>.</strong> .-.-.-</div>
-                        <div><strong>,</strong> --..--</div>
-                        <div><strong>?</strong> ..--..</div>
-                        <div><strong>'</strong> .----.</div>
-                        <div><strong>/</strong> -..-.</div>
-                        <div><strong>(</strong> -.--.</div>
-                        <div><strong>)</strong> -.--.-</div>
-                        <div><strong>&</strong> .-...</div>
-                        <div><strong>:</strong> ---...</div>
-                        <div><strong>;</strong> -.-.-.</div>
-                        <div><strong>=</strong> -...-</div>
-                        <div><strong>+</strong> .-.-.</div>
-                        <div><strong>-</strong> -....-</div>
-                        <div><strong>_</strong> ..--.-</div>
-                        <div><strong>"</strong> .-..-.</div>
-                        <div><strong>$</strong> ...-..-</div>
-                        <div><strong>!</strong> -.-.--</div>
-                        <div><strong>@</strong> .--.-.</div>
-                    </div>
+                    
+                    <article>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.5rem; font-family: monospace; font-size: 0.9rem;">
+                            <div><strong>A</strong> .-</div>
+                            <div><strong>B</strong> -...</div>
+                            <div><strong>C</strong> -.-.</div>
+                            <div><strong>D</strong> -..</div>
+                            <div><strong>E</strong> .</div>
+                            <div><strong>F</strong> ..-.</div>
+                            <div><strong>G</strong> --.</div>
+                            <div><strong>H</strong> ....</div>
+                            <div><strong>I</strong> ..</div>
+                            <div><strong>J</strong> .---</div>
+                            <div><strong>K</strong> -.-</div>
+                            <div><strong>L</strong> .-..</div>
+                            <div><strong>M</strong> --</div>
+                            <div><strong>N</strong> -.</div>
+                            <div><strong>O</strong> ---</div>
+                            <div><strong>P</strong> .--.</div>
+                            <div><strong>Q</strong> --.-</div>
+                            <div><strong>R</strong> .-.</div>
+                            <div><strong>S</strong> ...</div>
+                            <div><strong>T</strong> -</div>
+                            <div><strong>U</strong> ..-</div>
+                            <div><strong>V</strong> ...-</div>
+                            <div><strong>W</strong> .--</div>
+                            <div><strong>X</strong> -..-</div>
+                            <div><strong>Y</strong> -.--</div>
+                            <div><strong>Z</strong> --..</div>
+                            <div><strong>1</strong> .----</div>
+                            <div><strong>2</strong> ..---</div>
+                            <div><strong>3</strong> ...--</div>
+                            <div><strong>4</strong> ....-</div>
+                            <div><strong>5</strong> .....</div>
+                            <div><strong>6</strong> -....</div>
+                            <div><strong>7</strong> --...</div>
+                            <div><strong>8</strong> ---..</div>
+                            <div><strong>9</strong> ----.</div>
+                            <div><strong>0</strong> -----</div>
+                            <div><strong>.</strong> .-.-.-</div>
+                            <div><strong>,</strong> --..--</div>
+                            <div><strong>?</strong> ..--..</div>
+                            <div><strong>'</strong> .----.</div>
+                            <div><strong>/</strong> -..-.</div>
+                            <div><strong>(</strong> -.--.</div>
+                            <div><strong>)</strong> -.--.-</div>
+                            <div><strong>&</strong> .-...</div>
+                            <div><strong>:</strong> ---...</div>
+                            <div><strong>;</strong> -.-.-.</div>
+                            <div><strong>=</strong> -...-</div>
+                            <div><strong>+</strong> .-.-.</div>
+                            <div><strong>-</strong> -....-</div>
+                            <div><strong>_</strong> ..--.-</div>
+                            <div><strong>"</strong> .-..-.</div>
+                            <div><strong>$</strong> ...-..-</div>
+                            <div><strong>!</strong> -.-.--</div>
+                            <div><strong>@</strong> .--.-.</div>
+                        </div>
+                    </article>
                 </details>
+            </section>
+
+            <section>
                 <div class="canvas-container">
                     <canvas id="morseCanvas"></canvas>
                 </div>
-                <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
-                    <div id="decodedText" style="flex: 1; padding: 1rem; background-color: var(--pico-background-color); border: 1px solid var(--pico-muted-border-color); border-radius: var(--pico-border-radius); font-family: monospace; min-height: 3rem; word-wrap: break-word;">
-                        <strong>Decoded:</strong> <span id="decodedTextContent"></span>
-                    </div>
-                    <button onclick="clearDecodedText()" style="white-space: nowrap;">Clear</button>
-                </div>
             </section>
+
+            <section>
+                <details>
+                    <summary>Practice Encoder</summary>
+                    <article>
+                        <div style="margin-bottom: 1rem;">
+                            <label for="morseInput">Type text to convert to Morse code:</label>
+                            <input type="text" id="morseInput" placeholder="Enter text here..." oninput="convertToMorse()" style="margin-top: 0.5rem;">
+                            <div id="morseOutput" style="margin-top: 0.5rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); gap: 0.25rem; padding: 0.5rem; background-color: var(--pico-background-color); border: 1px solid var(--pico-muted-border-color); border-radius: var(--pico-border-radius); min-height: 4rem;"></div>
+                        </div>
+                    </article>
+                </details>
+            </section>
+
+            <section>
+                <details>
+                    <summary>Practice Decoder</summary>
+                    <article>
+                        <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+                            <div id="decodedText" style="flex: 1; padding: 1rem; background-color: var(--pico-background-color); border: 1px solid var(--pico-muted-border-color); border-radius: var(--pico-border-radius); font-family: monospace; min-height: 3rem; word-wrap: break-word;">
+                                <strong>Decoded:</strong> <span id="decodedTextContent"></span>
+                            </div>
+                            <button onclick="clearDecodedText()" style="white-space: nowrap;">Clear</button>
+                        </div>
+                    </article>
+                </details>
+            </section>
+            
             <section id="modal" class="button-row">
                 <label>
                     <input id="togglesound" name="audio" type="checkbox" role="switch" checked />
@@ -312,16 +335,39 @@
             // Save to localStorage
             localStorage.setItem('morseInput', input);
             
+            // Clear output
+            output.innerHTML = '';
+            
             if (input.trim() === '') {
-                output.textContent = '';
                 return;
             }
             
             try {
-                const morseCode = MorseCode.encode(input);
-                output.textContent = morseCode;
+                // Create a grid cell for each character
+                for (let i = 0; i < input.length; i++) {
+                    const char = input[i];
+                    const morseChar = MorseCode.encode(char);
+                    
+                    // Create cell container
+                    const cell = document.createElement('div');
+                    cell.style.cssText = 'display: flex; flex-direction: column; align-items: center; padding: 0.25rem; border: 1px solid var(--pico-muted-border-color); border-radius: var(--pico-border-radius); background-color: var(--pico-card-background-color); font-family: monospace;';
+                    
+                    // Character display (top)
+                    const charDiv = document.createElement('div');
+                    charDiv.style.cssText = 'font-size: 1.2rem; font-weight: bold; margin-bottom: 0.25rem;';
+                    charDiv.textContent = char === ' ' ? '␣' : char.toUpperCase();
+                    
+                    // Morse code display (bottom)
+                    const morseDiv = document.createElement('div');
+                    morseDiv.style.cssText = 'font-size: 0.9rem; color: var(--pico-muted-color);';
+                    morseDiv.textContent = morseChar || (char === ' ' ? '/' : '?');
+                    
+                    cell.appendChild(charDiv);
+                    cell.appendChild(morseDiv);
+                    output.appendChild(cell);
+                }
             } catch (error) {
-                output.textContent = 'Error converting to Morse code';
+                output.innerHTML = '<div style="padding: 0.5rem; color: var(--pico-del-color);">Error converting to Morse code</div>';
             }
         }
     </script>
