@@ -14,8 +14,8 @@ PicoKeyer is a CW keyer for the [Raspberry Pi Pico](https://www.raspberrypi.com/
    * Visualization of CW and tones
 * Added features of this version:
    * Morse Code quick reference
-   * Type out a phrase and see what you should type
-   * Attempt to decode the message typed
+   * Type out a phrase and see what you should key
+   * Attempt to decode the message keyed
    * Auto clear the decoded message after 4 seconds of inactivity
    * encoding/decoding from [Syncthetic](https://github.com/Syncthetic/MorseCode)
    * Store web UI settings in localStorage
